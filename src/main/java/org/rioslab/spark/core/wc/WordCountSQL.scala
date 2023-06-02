@@ -3,7 +3,6 @@ package org.rioslab.spark.core.wc
 import org.apache.spark.sql.functions.col
 import org.apache.spark.{SparkConf, sql}
 import org.apache.spark.sql.{Encoder, Encoders, SparkSession}
-import org.rioslab.spark.core.util.CacheUtil
 
 object WordCountSQL {
 
@@ -48,6 +47,8 @@ object WordCountSQL {
         wordCount.show()
 
         // 不返回数据就返回null
-        null
+        val str = wordCount.toJSON.collect().toString
+
+        str
     }
 }
