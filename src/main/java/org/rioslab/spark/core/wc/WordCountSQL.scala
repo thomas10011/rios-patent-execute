@@ -11,7 +11,7 @@ object WordCountSQL {
 
         // 创建配置
         val config = new SparkConf() // 创建一个配置类的对象
-            .setMaster("local[*]") // 设置spark的运行模式 local[*] 表示本地运行，自动确定使用的CPU核数
+            .setMaster("spark://mn1:6540") // 设置spark的运行模式 local[*] 表示本地运行，自动确定使用的CPU核数
             .setAppName("WordCount SQL Application") // 这里设置应用名
 
         // 这里创建一个Spark Session的对象，里面包含Spark Context，用于Spark运行时的操作
